@@ -34,10 +34,12 @@
   nav.main-nav a.active{color:var(--navy-900);}
   nav.main-nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:3px;border-radius:99px;background:var(--gold-500);}
   .header-actions{display:flex;align-items:center;gap:18px;}
+  .menu-toggle{display:none;width:42px;height:42px;align-items:center;justify-content:center;border:1px solid rgba(11,37,69,0.12);border-radius:10px;color:var(--navy-900);}
+  .menu-toggle svg{width:22px;height:22px;}
   .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:11px 22px;border-radius:var(--radius-full);white-space:nowrap;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;}
   .btn-primary{background:var(--navy-900);color:var(--white);box-shadow:0 8px 20px rgba(11,37,69,0.25);}
   .btn-primary:hover{transform:translateY(-2px);background:var(--navy-800);}
-  @media (max-width:900px){nav.main-nav{display:none;}}
+  @media (max-width:900px){nav.main-nav{display:none;position:absolute;top:calc(100% + 1px);left:0;right:0;padding:12px 24px 18px;background:var(--white);border-bottom:1px solid rgba(11,37,69,0.08);box-shadow:var(--shadow-md);} nav.main-nav.is-open{display:flex;flex-direction:column;align-items:stretch;gap:0;} nav.main-nav a{padding:13px 0;border-bottom:1px solid rgba(11,37,69,0.06);} nav.main-nav a:last-child{border-bottom:0;} nav.main-nav a.active::after{display:none;} .menu-toggle{display:inline-flex;}}
   @media (max-width:560px){.header-inner{height:66px;} .brand span.brand-text{display:none;}}
 
   .page-hero{position:relative;background:linear-gradient(180deg,var(--navy-900) 0%,#0A2040 100%);overflow:hidden;padding:56px 0 64px;}
@@ -89,7 +91,7 @@
       <span class="brand-mark">S2</span>
       <span class="brand-text">SMPN 2 Cibungbulang</span>
     </a>
-    <nav class="main-nav" aria-label="Navigasi utama">
+    <nav id="main-navigation" class="main-nav" aria-label="Navigasi utama">
       <a href="../index.html">Beranda</a>
       <a href="./profile.html">Profil</a>
       <a href="./akademik.html">Akademik</a>
@@ -98,6 +100,7 @@
       <a href="./kontak.html">Kontak</a>
     </nav>
     <div class="header-actions">
+      <button class="menu-toggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="main-navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg></button>
       <a href="./ppdb.html" class="btn btn-primary">PPDB Online</a>
     </div>
   </div>
@@ -199,5 +202,19 @@
   </div>
 </footer>
 
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNavigation = document.querySelector('#main-navigation');
+  menuToggle.addEventListener('click', () => {
+    const isOpen = mainNavigation.classList.toggle('is-open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi');
+  });
+  mainNavigation.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    mainNavigation.classList.remove('is-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Buka menu navigasi');
+  }));
+</script>
 </body>
 </html>
