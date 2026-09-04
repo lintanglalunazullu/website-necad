@@ -73,6 +73,13 @@
   .misi-item{display:flex;gap:14px;background:var(--bg-soft);border-radius:var(--radius-md);padding:16px 18px;border-left:4px solid var(--gold-500);}
   .misi-item .n{font-family:'Poppins',sans-serif;font-weight:800;color:var(--blue-600);font-size:14px;flex-shrink:0;}
   .misi-item p{font-size:14.5px;color:var(--ink);line-height:1.6;}
+  .vision-section{position:relative;background-image:linear-gradient(90deg,rgba(11,37,69,.86),rgba(11,37,69,.68)),url('../image/visimisi.jpeg');background-size:cover;background-position:center;color:var(--white);overflow:hidden;}
+  .vision-section::before{content:"";position:absolute;inset:0;background:rgba(20,145,155,.12);pointer-events:none;}
+  .vision-section .container{position:relative;z-index:1;}
+  .vision-section .section-eyebrow,.vision-section h2{color:var(--white);}
+  .vision-section .section-eyebrow{color:var(--gold-500);}
+  .vision-section .lead{color:rgba(255,255,255,.88);max-width:860px;}
+  .vision-section .misi-item{background:rgba(255,255,255,.94);}
 
   .facility-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
   .facility{background:var(--white);border:1px solid rgba(11,37,69,0.08);border-radius:var(--radius-md);padding:16px 18px;font-size:14px;font-weight:600;color:var(--navy-900);box-shadow:var(--shadow-sm);display:flex;align-items:center;gap:10px;}
@@ -99,6 +106,11 @@
   .footer-col a:hover{color:var(--white);padding-left:4px;}
   @media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}}
   @media (max-width:560px){.footer-grid{grid-template-columns:1fr;} .footer-brand p{max-width:100%;}}
+  .ai-float{position:fixed;right:24px;bottom:24px;z-index:100;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--navy-900);color:var(--white);box-shadow:0 8px 22px rgba(0,0,0,.22);transition:transform .2s ease,box-shadow .2s ease;overflow:hidden;}
+  .ai-float:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 12px 28px rgba(0,0,0,.28);}
+  .ai-float:focus-visible{outline:3px solid var(--gold-500);outline-offset:4px;}
+  .ai-float img{width:34px;height:34px;object-fit:contain;border-radius:50%;}
+  @media (max-width:560px){.ai-float{right:16px;bottom:16px;width:52px;height:52px;}.ai-float img{width:30px;height:30px;}}
   .footer-bottom{border-top:1px solid rgba(255,255,255,0.12);padding:22px 0;text-align:center;font-size:13px;margin-top:32px;}
   body{font-family:'DM Sans',sans-serif;}
   h1,h2,h3,.brand,nav a,.btn{font-family:'DM Sans',sans-serif;}
@@ -173,7 +185,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section vision-section">
     <div class="container">
       <div class="section-eyebrow">ARAH SEKOLAH</div>
       <h2>Visi</h2>
@@ -256,6 +268,7 @@
   </div>
 </footer>
 
+<a class="ai-float" href="https://aksaraku-gamma.vercel.app/login.html" target="_blank" rel="noopener" aria-label="Buka AI Asisten"><img src="../image/logoaksaraku.png" alt="Logo Aksaraku"></a>
 <script>
   const socialUrls = { Instagram: 'https://www.instagram.com/smpnduacibungbulang?igsi=NXZva2dyZnQ5dXEx', Facebook: 'https://www.facebook.com/share/1bb8trP3XX/?mibextid=wwXIfr', TikTok: 'https://www.tiktok.com/@smpnduacibungbulang?_r=1&_t=ZS-99Re0dvhYPP' };
   document.querySelectorAll('.footer-social a').forEach(link => { link.href = socialUrls[link.getAttribute('aria-label')]; link.target = '_blank'; link.rel = 'noopener'; });
