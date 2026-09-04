@@ -6,7 +6,8 @@
 <title>Informasi | SMP Negeri 2 Cibungbulang</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="icon" type="image/jpeg" href="../image/images.jpg">
 <style>
   :root{
     --navy-900:#0B2545; --navy-800:#0F3166; --blue-600:#1B4F91; --blue-500:#2563AC;
@@ -27,7 +28,7 @@
   header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(11,37,69,0.06);}
   .header-inner{display:flex;align-items:center;justify-content:space-between;height:76px;}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:var(--navy-900);white-space:nowrap;}
-  .brand-mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(145deg,var(--blue-600),var(--navy-900));display:flex;align-items:center;justify-content:center;color:var(--gold-500);font-weight:800;font-size:15px;flex-shrink:0;}
+  .brand-mark{width:42px;height:42px;border-radius:10px;object-fit:contain;background:var(--white);padding:2px;flex-shrink:0;}
   nav.main-nav{display:flex;align-items:center;gap:36px;}
   nav.main-nav a{font-size:14.5px;font-weight:600;color:var(--slate-500);position:relative;padding:6px 2px;transition:color .18s ease;}
   nav.main-nav a:hover{color:var(--navy-900);}
@@ -42,7 +43,7 @@
   @media (max-width:900px){nav.main-nav{display:none;position:absolute;top:calc(100% + 1px);left:0;right:0;padding:12px 24px 18px;background:var(--white);border-bottom:1px solid rgba(11,37,69,0.08);box-shadow:var(--shadow-md);} nav.main-nav.is-open{display:flex;flex-direction:column;align-items:stretch;gap:0;} nav.main-nav a{padding:13px 0;border-bottom:1px solid rgba(11,37,69,0.06);} nav.main-nav a:last-child{border-bottom:0;} nav.main-nav a.active::after{display:none;} .menu-toggle{display:inline-flex;}}
   @media (max-width:560px){.header-inner{height:66px;} .brand span.brand-text{display:none;}}
 
-  .page-hero{position:relative;background:linear-gradient(180deg,var(--navy-900) 0%,#0A2040 100%);overflow:hidden;padding:56px 0 64px;}
+  .page-hero{position:relative;background-image:linear-gradient(90deg,rgba(18,59,82,.8),rgba(18,59,82,.42)),url('../image/background.jpg');background-size:cover;background-position:center;overflow:hidden;padding:56px 0 64px;}
   .page-hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 0%, black 0%, transparent 72%);pointer-events:none;}
   .page-hero .container{position:relative;}
   .breadcrumb{color:var(--slate-300);font-size:13.5px;font-weight:600;margin-bottom:14px;}
@@ -82,7 +83,26 @@
   @media (max-width:700px){.social-grid{grid-template-columns:1fr;}}
 
   footer{background:var(--navy-900);color:var(--slate-300);padding:48px 0 0;margin-top:20px;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;}
+  .footer-brand h3{color:var(--white);font-size:19px;font-weight:700;margin-bottom:14px;}
+  .footer-brand p{font-size:14.5px;line-height:1.75;max-width:280px;color:var(--slate-300);}
+  .footer-social{display:flex;gap:10px;margin-top:16px;}
+  .footer-social a{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:15px;transition:background .18s ease;}
+  .footer-social a:hover{background:var(--gold-500);color:var(--navy-900);}
+  .footer-social svg{width:1.1em;height:1.1em;display:block;}
+  .footer-col h4{font-family:'Poppins',sans-serif;color:var(--gold-500);font-size:12.5px;font-weight:700;letter-spacing:.09em;margin-bottom:18px;}
+  .footer-col ul{display:flex;flex-direction:column;gap:12px;list-style:none;padding:0;}
+  .footer-col a{font-size:14.5px;color:var(--slate-300);transition:color .18s ease,padding-left .18s ease;}
+  .footer-col a:hover{color:var(--white);padding-left:4px;}
+  @media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}}
+  @media (max-width:560px){.footer-grid{grid-template-columns:1fr;} .footer-brand p{max-width:100%;}}
   .footer-bottom{border-top:1px solid rgba(255,255,255,0.12);padding:22px 0;text-align:center;font-size:13px;margin-top:32px;}
+  body{font-family:'DM Sans',sans-serif;}
+  h1,h2,h3,.brand,nav a,.btn{font-family:'DM Sans',sans-serif;}
+  .page-hero h1{font-family:'DM Serif Display',serif;font-weight:400;}
+  .page-hero{background-image:linear-gradient(90deg,rgba(18,59,82,.8),rgba(18,59,82,.42)),url('../image/background.jpg');background-size:cover;background-position:center;}
+  .page-hero::before{background-image:linear-gradient(135deg,rgba(255,255,255,.06) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.06) 50%,rgba(255,255,255,.06) 75%,transparent 75%);background-size:96px 96px;opacity:.35;}
+  .section h2{font-weight:700;}
 </style>
 </head>
 <body>
@@ -90,7 +110,7 @@
 <header>
   <div class="container header-inner">
     <a href="../index.html" class="brand">
-      <span class="brand-mark">S2</span>
+      <img class="brand-mark" src="../image/images.jpg" alt="Logo SMP Negeri 2 Cibungbulang">
       <span class="brand-text">SMPN 2 Cibungbulang</span>
     </a>
     <nav id="main-navigation" class="main-nav" aria-label="Navigasi utama">
@@ -199,12 +219,14 @@
 
 <footer>
   <div class="container">
-    <div style="padding-bottom:24px;font-size:14px;">SMP Negeri 2 Cibungbulang — Jl. Desa Girimulya RT.02/RW.01, Kec. Cibungbulang, Kab. Bogor.</div>
+    <div class="footer-grid"><div class="footer-brand"><h3>SMPN 2 Cibungbulang</h3><p>Membangun generasi cerdas, berakhlak mulia, dan berwawasan lingkungan.</p><div class="footer-social"><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"></rect><circle cx="12" cy="12" r="3.5"></circle></svg></a><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V4a22 22 0 0 0-2.5-.2c-2.5 0-4.2 1.5-4.2 4.2V10H7.5v3h2.6v8h3.4Z"></path></svg></a><a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 4v10.5a3.5 3.5 0 1 1-3-3.46M14 4c1 2 2.4 3 5 3"></path></svg></a></div></div><div class="footer-col"><h4>MENU</h4><ul><li><a href="./profile.html">Profil</a></li><li><a href="./akademik.html">Akademik</a></li><li><a href="./kesiswaan.html">Kesiswaan</a></li></ul></div><div class="footer-col"><h4>INFORMASI</h4><ul><li><a href="./informasi.html">Berita &amp; Pengumuman</a></li><li><a href="./ppdb.html">PPDB / SPMB</a></li><li><a href="./kontak.html">Kontak</a></li></ul></div><div class="footer-col"><h4>KONTAK</h4><ul><li>(0251) 8647771</li><li>smpn_2cibungbulang@yahoo.co.id</li><li>Jl. Desa Girimulya RT.02/RW.01</li></ul></div></div>
     <div class="footer-bottom">&copy; 2026 SMP Negeri 2 Cibungbulang. All Rights Reserved.</div>
   </div>
 </footer>
 
 <script>
+  const socialUrls = { Instagram: 'https://www.instagram.com/smpnduacibungbulang?igsi=NXZva2dyZnQ5dXEx', Facebook: 'https://www.facebook.com/share/1bb8trP3XX/?mibextid=wwXIfr', TikTok: 'https://www.tiktok.com/@smpnduacibungbulang?_r=1&_t=ZS-99Re0dvhYPP' };
+  document.querySelectorAll('.footer-social a').forEach(link => { link.href = socialUrls[link.getAttribute('aria-label')]; link.target = '_blank'; link.rel = 'noopener'; });
   const menuToggle = document.querySelector('.menu-toggle');
   const mainNavigation = document.querySelector('#main-navigation');
   menuToggle.addEventListener('click', () => {
