@@ -102,6 +102,22 @@
   .page-hero{background-image:linear-gradient(90deg,rgba(18,59,82,.8),rgba(18,59,82,.42)),url('../image/background.jpg');background-size:cover;background-position:center;}
   .page-hero::before{background-image:linear-gradient(135deg,rgba(255,255,255,.06) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.06) 50%,rgba(255,255,255,.06) 75%,transparent 75%);background-size:96px 96px;opacity:.35;}
   .section h2{font-weight:700;}
+
+  html,body{overflow-x:hidden;}
+  html{scrollbar-width:none;-ms-overflow-style:none;}
+  html::-webkit-scrollbar{display:none;width:0;height:0;}
+  @media (max-width:900px){.header-inner{gap:10px;} .brand{min-width:0;} .header-actions{flex-shrink:0;} nav.main-nav{width:100%;}}
+  @media (max-width:560px){
+    .container{padding-left:16px;padding-right:16px;}
+    .brand span.brand-text{display:block;white-space:normal;font-size:clamp(11px,3.2vw,15px);line-height:1.1;}
+    .header-actions{gap:8px;}
+    .header-actions .btn{padding:10px 12px;font-size:12px;}
+    .page-hero{padding:44px 0 52px;}
+    .section{padding:42px 0;}
+    .section h2{font-size:23px;}
+    .footer-grid{grid-template-columns:1fr;gap:28px;}
+  }
+  @media (max-width:360px){.header-actions .btn{display:none;}}
 </style>
 </head>
 <body>
